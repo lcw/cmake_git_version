@@ -4,8 +4,13 @@ INCLUDE(CPack)
 PROJECT(VERSIONHEADER C)
 FIND_PACKAGE(Git)
 FILE(WRITE ${CMAKE_BINARY_DIR}/main.c
-"\#include \"version.h\"\nint main(void){return 0;}\n"
-)
+"\#include \"version.h\"
+\#include <stdio.h>
+int main(void)
+{
+  printf(\"%s\\n\", VERSION);
+  return 0;
+}")
 FILE(WRITE ${CMAKE_BINARY_DIR}/version.h.in
 "\#define VERSION \"@VERSION@\"\n"
 )
