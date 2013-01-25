@@ -90,4 +90,4 @@ EXECUTE_PROCESS(COMMAND cpack -G TGZ --config CPackSourceConfig.cmake
 ENDIF(UNIX)
 
 ADD_DEPENDENCIES(main version)
-  ADD_DEPENDENCIES(dist version)
+ADD_DEPENDENCIES(dist version)
